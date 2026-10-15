@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LokTvHookPro v4.1.0 — موديول Xposed احترافي</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", Tahoma, Arial, sans-serif; background: #0f172a; color: #e2e8f0; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+  .card { background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 28px; margin-bottom: 20px; }
+  h1 { margin: 0 0 8px; font-size: 30px; color: #fff; }
+  .tagline { color: #94a3b8; margin: 0 0 16px; font-size: 15px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 0; list-style: none; }
+  .badges li { background: #0ea5e9; color: #04121f; font-weight: 700; font-size: 13px; padding: 5px 12px; border-radius: 999px; }
+  .badges li.alt { background: #22c55e; }
+  .badges li.warn { background: #f59e0b; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  a.btn { display: inline-block; text-decoration: none; font-weight: 700; padding: 12px 22px; border-radius: 10px; background: #22c55e; color: #05240f; }
+  a.btn.src { background: transparent; color: #7dd3fc; border: 2px solid #0ea5e9; }
+  h2 { font-size: 19px; color: #fff; margin: 0 0 12px; }
+  ul.feat { margin: 0; padding-right: 20px; line-height: 2; font-size: 15px; }
+  ol.steps { margin: 0; padding-right: 22px; line-height: 2; font-size: 15px; }
+  code { background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 1px 8px; font-size: 13px; color: #7dd3fc; direction: ltr; display: inline-block; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 24px; } }
+  footer { text-align: center; color: #64748b; font-size: 13px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+
+  <div class="card">
+    <h1>LokTvHookPro <span style="color:#22c55e">v4.1.0</span></h1>
+    <p class="tagline">LokTvHookPro 4.1.0 — بصمة+انعكاس، آمن، API26-35، روت/بدون روت</p>
+    <ul class="badges">
+      <li class="alt">com.loktv.hookpro</li>
+      <li>versionCode 410</li>
+      <li class="warn">Android API 26 → 35</li>
+      <li>LSPosed / LSPatch / NPatch / HKP</li>
+    </ul>
+    <div class="btns">
+      <a class="btn" href="LokTvHookPro-v4.1.0.apk" download>تحميل الموديول APK</a>
+      <a class="btn src" href="LokTvHookPro-v4.1.0-src.zip" download>السورس كود ZIP</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>لماذا هذا الموديول؟</h2>
+    <ul class="feat">
+      <li>بلا أسماء ثابتة: <code>lpparam.classLoader</code> + انعكاس + بصمة (اسم الصنف + توقيع الدالة) + جرد DEX.</li>
+      <li>يتعامل مع التطبيقات المضغوطة والمحمية (5 مصادر للـ ClassLoader + سلسلة تفعيل حتى 31 ثانية).</li>
+      <li>مضاد للكراش: فلتر بنية تحتية + <code>Safe.run</code> + حدود عدد/زمن + kill-switch.</li>
+      <li>يعمل مع أي حزمة وأي إصدار أعلى أو أقل (حارس <code>API 26+</code> متحمّل).</li>
+      <li>تثبيت بروت (LSPosed) وبدون روت (LSPatch / NPatch / HKP).</li>
+    </ul>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>تثبيت بدون روت</h2>
+      <ol class="steps">
+        <li>ثبّت APK الموديول وافتحه مرة.</li>
+        <li>فعّله في المدير (LSPatch / NPatch / HKP).</li>
+        <li>Local patch ← اختر APK الهدف ← Patch ← Install.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>تثبيت بروت</h2>
+      <ol class="steps">
+        <li>ثبّت APK الموديول.</li>
+        <li>فعّله في LSPosed وعلّم أي حزمة هدف.</li>
+        <li>Force stop للهدف ثم افتحه.</li>
+      </ol>
+    </div>
+  </div>
+
+  <footer>LokTvHookPro v4.1.0 (410) — API 26–35 — <code>docs/ANALYSIS_LokTvHookPro_v4.1.0.md</code> هو المرجع الدائم</footer>
+
+</div>
+</body>
+</html>

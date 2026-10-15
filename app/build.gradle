@@ -1,0 +1,51 @@
+plugins {
+    id("com.android.application")
+}
+
+android {
+    // LokTvHookPro v4.1.0 — com.loktv.hookpro — API 26 → 35
+    namespace = "com.loktv.hookpro"
+    compileSdk = 35
+
+    defaultConfig {
+        applicationId = "com.loktv.hookpro"
+        minSdk = 26
+        targetSdk = 35
+        versionCode = 410
+        versionName = "4.1.0"
+    }
+
+    // Release signing is done explicitly in build.sh (zipalign + apksigner
+    // with v1+v2) so the exact schemes are guaranteed regardless of AGP
+    // defaults. Keystore: keystore/loktvhookpro.jks (git-ignored, generated
+    // by build.sh when missing). Pass -PLOKTV_KEY_PASS=... to override.
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            shrinkResources = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            debuggable = true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    lint {
+        abortOnError = false
+    }
+}
+
+dependencies {
+    // Xposed API — compileOnly: provided at runtime by
+    // LSPosed / EdXposed (root) or LSPatch / NPatch / HKPatcher (rootless).
+    compileOnly("de.robv.android.xposed:api:82")
+}

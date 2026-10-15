@@ -1,0 +1,26 @@
+
+screenshots/
+
+*.log
+
+*.pid
+
+.agents/
+
+.agentsweb/
+
+.omgithub-runtime/
+
+.opencode-ssh/
+
+.opencode-web/
+
+node_modules/
+
+# LokTvHookPro build outputs & secrets
+keystore/
+app/build/
+.gradle/
+build/
+local.properties
+dist/*.idsig

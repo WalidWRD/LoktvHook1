@@ -1,19 +1,63 @@
-# LoktvHook1
+# LokTvHookPro v4.1.0
 
-<!-- omgithub:readme:start -->
-## 🚀 Build, play, and remix with OMGithub
+> `LokTvHookPro 4.1.0 — بصمة+انعكاس، آمن، API26-35، روت/بدون روت`
 
-**Remixed using [OMGithub.com](https://omgithub.com).**
+## بطاقة الموديول
 
-[![OMGithub](https://img.shields.io/badge/OMGithub-Open%20project-orange?style=for-the-badge)](https://omgithub.com/WalidWRD/LoktvHook1)
-[![GitHub](https://img.shields.io/badge/GitHub-Source-181717?logo=github&style=for-the-badge)](https://github.com/WalidWRD/LoktvHook1)
+| البند | القيمة |
+|---|---|
+| الاسم | LokTvHookPro |
+| الإصدار | 4.1.0 (versionCode 410) |
+| الحزمة | `com.loktv.hookpro` |
+| أندرويد | API 26 (8.0) → API 35 (15) |
+| الدخول | `com.loktv.hookpro.HookEntry` |
+| روت | LSPosed / EdXposed |
+| بدون روت | NPatch / LSPatch / HKPatcher |
 
-- 🎮 [Open the project](https://omgithub.com/WalidWRD/LoktvHook1).
-- ✨ [Remix this project](https://omgithub.com/?remix=WalidWRD%2FLoktvHook1).
-- 💻 [Explore the source](https://github.com/WalidWRD/LoktvHook1).
-- 🛠️ [Check build runs](https://github.com/WalidWRD/LoktvHook1/actions).
-- 🐛 [Report an issue](https://github.com/WalidWRD/LoktvHook1/issues).
-- 👤 [Explore the creator's projects](https://omgithub.com/WalidWRD).
-- 🌍 [Create with OMGithub](https://omgithub.com).
-- 🧬 [Explore the remix source](https://github.com/WalidWRD/LoktvHook1).
-<!-- omgithub:readme:end -->
+## المخرجات الجاهزة
+
+| الملف | الوصف |
+|---|---|
+| `dist/LokTvHookPro-v4.1.0.apk` | الموديول موقّعاً (v1+v2+v3) — ثبّته مباشرة |
+| `dist/LokTvHookPro-v4.1.0-src.zip` | السورس كود الكامل — يُبنى بـ `./build.sh` |
+| `docs/ANALYSIS_LokTvHookPro_v4.1.0.md` | ملف التحليل والنتائج (المرجع الدائم — يغني عن إعادة التحليل) |
+
+## البناء من السورس (أمر واحد)
+
+```bash
+./build.sh
+# الناتج: dist/LokTvHookPro-v4.1.0.apk
+```
+
+المتطلبات: JDK 17 + Android SDK (يقرأ `ANDROID_HOME`) + إنترنت أول مرة فقط.
+كلمة سر المفتاح الافتراضية `loktv2026` (غيّرها عبر `LOKTV_KEY_PASS=... ./build.sh`) —
+**احتفظ بملف `keystore/` للتحديثات** (نفس التوقيع شرط للتحديث فوق النسخة).
+
+## التثبيت
+
+### بدون روت (NPatch / LSPatch / HKP)
+1. ثبّت APK الموديول وافتحه مرة.
+2. فعّل الموديول في المدير.
+3. Local patch ← APK الهدف ← Patch ← Install.
+4. احذف نسخة الهدف الأصلية (التوقيع مختلف).
+
+### روت (LSPosed)
+1. ثبّت APK الموديول.
+2. فعّله في LSPosed وعلّم **أي** حزمة هدف (لا قيد على الاسم).
+3. Force stop للهدف ثم افتحه.
+
+## كيف يعمل (باختصار)
+
+- **بلا أسماء ثابتة**: `lpparam.classLoader` + انعكاس + بصمة
+  (اسم الصنف + توقيع الدالة: boolean/int/String/void) + جرد DEX من جدول السلاسل.
+- **مضغوط/محمي**: جامع لوادر من 5 مصادر + سلسلة تفعيل (2ث→31ث) تلتقط الأصناف بعد فك الضغط.
+- **بلا كراش**: فلتر بنية تحتية (`pairip`/`fancybypass`/...) + كل شيء داخل `Safe.run` +
+  حدود عدد/زمن + kill-switch (`<cacheDir>/loktv_hook_safe.flag`).
+- **قابل للصيانة**: كل الإعدادات في `core/Config.java` — انظر `docs/ANALYSIS_*` للتفاصيل.
+
+## التحقق من البناء
+
+```bash
+apksigner verify --print-certs dist/LokTvHookPro-v4.1.0.apk
+jarsigner -verify dist/LokTvHookPro-v4.1.0.apk   # v1/JAR
+```
