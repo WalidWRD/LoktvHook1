@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  NexHookPro v7.0.0 — AGP owns package/versionCode/versionName/min/target
+  (see app/build.gradle). For manual aapt2 builds re-add:
+    package="com.nexhook.pro"
+    android:versionCode="700" android:versionName="7.0.0"
+  plus <uses-sdk android:minSdkVersion="25" android:targetSdkVersion="35"/>
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:label="LokTvHookPro"
-        android:description="@string/module_description"
-        android:icon="@android:drawable/sym_def_app_icon"
-        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:icon="@android:drawable/ic_menu_manage"
         android:hasCode="true"
-        android:theme="@android:style/Theme.Material.Light">
+        android:allowBackup="false">
 
-        <meta-data android:name="xposedmodule" android:value="true" />
-        <!-- الوصف المدمج: يظهر في مدير الموديولات وسجل التشغيل — مختصر جداً -->
-        <meta-data android:name="xposeddescription" android:value="@string/module_description" />
-        <meta-data android:name="xposedminversion" android:value="82" />
-        <meta-data android:name="xposedscope" android:resource="@array/xposed_scope" />
+        <!-- Xposed Legacy API -->
+        <meta-data android:name="xposedmodule"        android:value="true"/>
+        <meta-data android:name="xposeddescription"   android:value="@string/module_description"/>
+        <meta-data android:name="xposedminversion"    android:value="82"/>
+        <meta-data android:name="xposedscope"         android:resource="@array/xposed_scope"/>
+
+        <!-- libxposed modern API 101 -> 102 (meta declaration, legacy-mode runtime) -->
+        <meta-data android:name="libxposed"           android:value="102"/>
+        <meta-data android:name="libxposed.api"       android:value="102"/>
+        <meta-data android:name="libxposed.min"       android:value="101"/>
 
         <activity
             android:name=".ui.SettingsActivity"
-            android:label="LokTvHookPro"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
     </application>

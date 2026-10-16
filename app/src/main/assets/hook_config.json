@@ -1,0 +1,20 @@
+{
+  "version": "7.0.2",
+  "features": ["vip-gate", "tier", "fields", "prefs-json-bundle", "textview"],
+  "limits": {
+    "max_hooks": 900,
+    "max_hooks_per_class": 60,
+    "max_classes_scan": 6000,
+    "scan_time_budget_ms": 2500,
+    "activation_timeout_ms": 8000
+  },
+  "safety": {
+    "forbid_infrastructure": true,
+    "coerce_return_type": true,
+    "no_classloader_hooks": true,
+    "no_load_library_hooks": true,
+    "multi_source_inventory": true,
+    "word_aware_filter": true,
+    "emergency_flag": "nexhook_safe.flag"
+  }
+}

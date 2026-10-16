@@ -10,8 +10,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // Official Xposed API host (de.robv.android.xposed:api:82 is NOT on Maven Central)
-        maven { url = uri("https://api.xposed.info/") }
+        // NOTE: Xposed APIs are vendored in app/libs (hermetic build):
+        //   xposed-api-82.jar        (legacy, de.robv.android.xposed)
+        //   libxposed-api-102.jar    (modern, io.github.libxposed)
+        // No extra repository needed.
     }
 }
 rootProject.name = "LokTvHookPro"

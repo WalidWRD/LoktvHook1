@@ -3,16 +3,16 @@ plugins {
 }
 
 android {
-    // LokTvHookPro v4.1.0 — com.loktv.hookpro — API 26 → 35
-    namespace = "com.loktv.hookpro"
+    // NexHookPro v7.0.2 — com.nexhook.pro — API 25 → 35
+    namespace = "com.nexhook.pro"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.loktv.hookpro"
-        minSdk = 26
+        applicationId = "com.nexhook.pro"
+        minSdk = 25
         targetSdk = 35
-        versionCode = 410
-        versionName = "4.1.0"
+        versionCode = 702
+        versionName = "7.0.2"
     }
 
     // Release signing is done explicitly in build.sh (zipalign + apksigner
@@ -45,7 +45,9 @@ android {
 }
 
 dependencies {
-    // Xposed API — compileOnly: provided at runtime by
+    // Legacy Xposed API (HookEntry via assets/xposed_init) — runtime provided by
     // LSPosed / EdXposed (root) or LSPatch / NPatch / HKPatcher (rootless).
-    compileOnly("de.robv.android.xposed:api:82")
+    compileOnly(files("libs/xposed-api-82.jar"))
+    // Modern libxposed API 102 (MainHook via META-INF/xposed/java_init.list).
+    compileOnly(files("libs/libxposed-api-102.jar"))
 }

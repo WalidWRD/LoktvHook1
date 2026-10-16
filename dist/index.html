@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LokTvHookPro v4.1.0 — موديول Xposed احترافي</title>
+<title>NexHookPro v7.0.2 — موديول Xposed احترافي</title>
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
@@ -32,18 +32,20 @@
 <div class="wrap" id="app">
 
   <div class="card">
-    <h1>LokTvHookPro <span style="color:#22c55e">v4.1.0</span></h1>
-    <p class="tagline">LokTvHookPro 4.1.0 — بصمة+انعكاس، آمن، API26-35، روت/بدون روت</p>
+    <h1>NexHookPro <span style="color:#22c55e">v7.0.2</span></h1>
+    <p class="tagline">NexHookPro v7.0.2 | Universal VIP unlock | reflection+fingerprint | API25-35 | safe | root &amp; non-root</p>
     <ul class="badges">
-      <li class="alt">com.loktv.hookpro</li>
-      <li>versionCode 410</li>
-      <li class="warn">Android API 26 → 35</li>
+      <li class="alt">com.nexhook.pro</li>
+      <li>versionCode 702</li>
+      <li class="warn">Android API 25 → 35</li>
+      <li>MainHook (legacy) + ModernHook (libxposed 102)</li>
       <li>LSPosed / LSPatch / NPatch / HKP</li>
     </ul>
     <div class="btns">
-      <a class="btn" href="LokTvHookPro-v4.1.0.apk" download>تحميل الموديول APK</a>
-      <a class="btn src" href="LokTvHookPro-v4.1.0-src.zip" download>السورس كود ZIP</a>
+      <a class="btn" href="NexHookPro-v7.0.2.apk" download>تحميل الموديول APK ‏(v7.0.2)</a>
+      <a class="btn src" href="NexHookPro-v7.0.2-src.zip" download>السورس كود ZIP ‏(v7.0.2)</a>
     </div>
+    <p class="tagline" style="margin-top:12px">نفس توقيع v7.0.x — ترقية مباشرة بلا حذف. الإصدارات السابقة: <a style="color:#7dd3fc" href="NexHookPro-v7.0.1.apk" download>v7.0.1</a> — <a style="color:#7dd3fc" href="NexHookPro-v7.0.0.apk" download>v7.0.0</a> — <a style="color:#7dd3fc" href="LokTvHookPro-v6.0.0.apk" download>v6.0.0 (LokTv)</a></p>
   </div>
 
   <div class="card">
@@ -54,6 +56,11 @@
       <li>مضاد للكراش: فلتر بنية تحتية + <code>Safe.run</code> + حدود عدد/زمن + kill-switch.</li>
       <li>يعمل مع أي حزمة وأي إصدار أعلى أو أقل (حارس <code>API 26+</code> متحمّل).</li>
       <li>تثبيت بروت (LSPosed) وبدون روت (LSPatch / NPatch / HKP).</li>
+      <li>جديد v4.2.0: طبقة Bundle/Intent extras + بصمة Native (جرد .so ومراقبة التحميل) + إعدادات تفاعلية بـ 7 مفاتيح.</li>
+      <li>جديد v6.0.0: مدخل مزدوج MainHook (libxposed 102) + HookEntry + منع re-arm + قيم انتهاء 2100 + زر طوارئ + API 21+.</li>
+      <li>جديد v7.0.0 (هوية NexHookPro): لا loadLibrary إطلاقاً + ‏ContextWrapper + ‏BaseBundle + تفعيل واحد + فلتر infra صارم + API 25+.</li>
+      <li>جديد v7.0.1: حذف كل هوك ClassLoader + التنشيط بعد onCreate على Thread منفصل + ‏base.apk الحقيقي + timeout 8s.</li>
+      <li>جديد v7.0.2: جرد متعدد المصادر (splits) + فلتر word-aware + تشخيص host/vip-sample — إصلاح hooks=0.</li>
     </ul>
   </div>
 
@@ -76,7 +83,7 @@
     </div>
   </div>
 
-  <footer>LokTvHookPro v4.1.0 (410) — API 26–35 — <code>docs/ANALYSIS_LokTvHookPro_v4.1.0.md</code> هو المرجع الدائم</footer>
+  <footer>NexHookPro v7.0.2 (702) — API 25–35 — <code>docs/ANALYSIS_NexHookPro_v7.0.2.md</code> مع ملفي v7.0.x</footer>
 
 </div>
 </body>

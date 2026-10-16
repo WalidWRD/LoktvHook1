@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Recommended scope (user can still tick ANY package in LSPosed manager). -->
     <string-array name="xposed_scope">
         <item>com.hecate.phantom</item>
-        <item>com.hecate</item>
         <item>com.novan.morpha</item>
-        <item>com.novan</item>
         <item>com.looktv</item>
-        <item>com.looktv.app</item>
-        <item>com.looktv.mobile</item>
     </string-array>
 </resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- الوصف المدمج (): محدَّث — يظهر في مدير الموديولات وسجل التشغيل. مختصر جداً. -->
-    <string name="module_description">LokTvHookPro 4.1.0 — بصمة+انعكاس، آمن، API26-35، روت/بدون روت</string>
+    <string name="app_name">NexHookPro</string>
+    <string name="module_description">NexHookPro v7.0.2 | Universal VIP unlock | reflection+fingerprint | API25-35 | safe | root &amp; non-root</string>
 </resources>
